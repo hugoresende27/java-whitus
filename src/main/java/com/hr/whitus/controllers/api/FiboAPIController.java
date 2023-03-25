@@ -17,16 +17,16 @@ public class FiboAPIController {
 
 
 
-    @GetMapping("limit/{start}/{end}")
-    public ResponseEntity<List<Integer>> fiboBetweenLimits(@PathVariable int start, @PathVariable int end){
+    @GetMapping("/limit/{start}/{end}")
+    public ResponseEntity<List<Integer>> fiboBetweenLimits(@PathVariable("start") int start, @PathVariable("end") int end){
 
         List<Integer> sequence = FibonacciSequence.sequenceBetweenLimits(start, end);
 
         return ResponseEntity.ok().body(sequence);  //.ok to return 200
     }
 
-    @GetMapping("index/{start}/{end}")
-    public ResponseEntity<List<BigInteger>> fiboBetweenIndex(@PathVariable int start, @PathVariable int end){
+    @GetMapping("/index/{start}/{end}")
+    public ResponseEntity<List<BigInteger>> fiboBetweenIndex(@PathVariable("start") int start, @PathVariable("end") int end){
 
         List<BigInteger> sequence = FibonacciSequence.printFiboIndexes(start, end);
 
@@ -34,7 +34,7 @@ public class FiboAPIController {
     }
 
     @GetMapping("/{value}")
-    public ResponseEntity<BigInteger> findById(@PathVariable int value){
+    public ResponseEntity<BigInteger> findById(@PathVariable("value") int value){
 
         BigInteger res = FibonacciSequence.fibonnacci(value);
 

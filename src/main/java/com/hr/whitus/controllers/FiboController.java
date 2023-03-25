@@ -74,6 +74,7 @@ public class FiboController {
 
     @GetMapping("value{val}")
     public ModelAndView getFibonacciSequencesBetweenLimits(@RequestParam int val) throws IllegalAccessException
+//    public ModelAndView getFibonacciSequencesBetweenLimits(@PathVariable("val") int val) throws IllegalAccessException
     {
 
         ModelAndView mv = new ModelAndView("fibo-app/fibo");

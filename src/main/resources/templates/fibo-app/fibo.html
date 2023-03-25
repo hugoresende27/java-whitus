@@ -78,7 +78,7 @@
                         </h5>
                     </label>
                     <input type="range" class="form-range" id="end2" th:field="*{end}"
-                           min="10" max="1000000" value="1" step="1"
+                           min="10" max="10000" value="1" step="1"
                            oninput="document.getElementById('parE2').innerText = parseInt(this.value);parE2=parseInt(this.value)"
                     >
                 </div>
@@ -163,7 +163,9 @@
     </div>
 
     <div class="row">
-        <form th:action="@{/fibo/value{val}(val=${val})}" th:method="get"  class="text-center p-3 m-3">
+<!--        <form th:action="@{/fibo/value{val}(val=${val})}" th:method="get"  class="text-center p-3 m-3">-->
+        <form th:action="@{/fibo/value}" th:method="get"  class="text-center p-3 m-3">
+
 
             <div class="input-group">
                 <label for="val" class="form-label">Index
