@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fibo-app/fragments/header :: header}">
+
+</head>
+<body class="bg-dark text-white">
+
+<div th:insert="~{fibo-app/fragments/topmenu :: topmenu}"></div>
+
+<div class="container">
+
+    <ul>
+        <li> using BigInteger , if 0 return 0, if 1 return 1</li>
+        <li> for loop, starting in 2 finish in n</li>
+        <li>  c equals to a + b, previous elements</li>
+        <li>  a assumes b value</li>
+        <li>  b assumes c value</li>
+        <li>  b is always the end of the fibo sequence atm</li>
+        <li>   Initialize the first and second numbers to 0 and 1. </li>
+       <small>   Following this, we print the first and second numbers.
+        Then we send the flow to the iterative while loop
+         where we get the next number by adding the previous two numbers and simultaneously
+         we swap the first number with the second and the second with the third.
+          </small>
+        </ul>
+    <pre class="text-white">
+
+    public static BigInteger fibonnacci2(int n) {
+        BigInteger a = BigInteger.valueOf(0);
+        BigInteger b = BigInteger.valueOf(1);
+        BigInteger c = BigInteger.valueOf(1);
+        if (n == 0){
+            return a;
+        } else if(n == 1){
+            return b;
+        }
+        //  fib[i] = fib[i-1] + fib[i-2];
+        for (int j = 2; j <= n; j++) {
+            c = a.add(b);
+            a = b;
+            b = c;
+        }
+        return (b);
+    </pre>
+
+
+
+</div>
+
+<div th:insert="~{fibo-app/fragments/footer :: footer}">&copy</div>
+</body>
+</html>

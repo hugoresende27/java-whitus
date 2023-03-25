@@ -1,0 +1,17 @@
+h2{
+    font-family: sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    padding : 10px;
+}
+
+.container {
+
+    padding : 50px;
+    justify-content: center;
+
+}
+
