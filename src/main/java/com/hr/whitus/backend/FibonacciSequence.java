@@ -40,7 +40,7 @@ public class FibonacciSequence {
         return sequence;
     }
 
-    public static BigInteger fibonnacci2(int n) {
+    public static BigInteger fibonnacci(int n) {
         BigInteger a = BigInteger.valueOf(0);
         BigInteger b = BigInteger.valueOf(1);
         BigInteger c = BigInteger.valueOf(1);

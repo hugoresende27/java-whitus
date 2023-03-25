@@ -21,25 +21,35 @@
 
 
 ------------------------------------------------------------------------
-public class Desafio {
+public class Desafio 
+{
 
     //f(n)=f(n-1)+f(n-2)
     //f(0) = 0
     //f(1) = 1
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) 
+    {
         System.out.println(func1(47));
     }
 
-    public static int func1(int i) {
-        if (i == 0){
-            return 0;
-        } else if (i == 1){
-            return 1;
-        } else {
-            return func1(i-1 )+func1(i-2);
+    //  fib[i] = fib[i-1] + fib[i-2];
+    public static BigInteger fibonnacci(int n) 
+    {
+        BigInteger a = BigInteger.valueOf(0);
+        BigInteger b = BigInteger.valueOf(1);
+        BigInteger c = BigInteger.valueOf(1);
+        if (n == 0){
+            return a;
+        } else if(n == 1){
+            return b;
         }
+        for (int j = 2; j <= n; j++){
+            c = a.add(b);
+            a = b;
+            b = c;
+        }
+            return (b);
     }
 
     //fibonacci
