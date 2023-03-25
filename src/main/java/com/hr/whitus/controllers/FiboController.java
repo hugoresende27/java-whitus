@@ -20,7 +20,7 @@ public class FiboController {
     public ModelAndView index()
     {
         ModelAndView mv = new ModelAndView("fibo-app/fibo");
-        mv.addObject("formData", new FormDataDTO(0,0));
+        mv.addObject("formData", new FormDataDTO(0,10));
 
         return mv;
     }
@@ -68,6 +68,29 @@ public class FiboController {
         mv.addObject("time", timePerformance);
         mv.addObject("allHistory", allHistory);
         mv.addObject("formData", new FormDataDTO(start,end));
+        return mv;
+
+    }
+
+    @GetMapping("value{val}")
+    public ModelAndView getFibonacciSequencesBetweenLimits(@RequestParam int val) throws IllegalAccessException
+    {
+
+        ModelAndView mv = new ModelAndView("fibo-app/fibo");
+
+        long timeStart = System.currentTimeMillis();//count time start
+
+
+        long timePerformance = System.currentTimeMillis() - timeStart;//count time end
+
+        System.out.println(val);
+
+        BigInteger res = FibonacciSequence.fibonnacci(val);
+
+        mv.addObject("formData", new FormDataDTO(0,10));
+        mv.addObject("time", timePerformance);
+        mv.addObject("allHistory", allHistory);
+        mv.addObject("fiboValue", res);
         return mv;
 
     }

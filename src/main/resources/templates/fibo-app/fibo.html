@@ -162,6 +162,36 @@
 
     </div>
 
+    <div class="row">
+        <form th:action="@{/fibo/value{val}(val=${val})}" th:method="get"  class="text-center p-3 m-3">
+
+            <div class="input-group">
+                <label for="val" class="form-label">Index
+                    <input type="number" class="form-range" id="val" name="val">
+                </label>
+
+
+            </div>
+
+
+
+            <div class="m-3 p-3 text-center">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+
+            <div class="card text-dark" style="width: 25rem;">
+
+                <div class="card-body">
+                    <h5 class="card-title">Fibonacci Value</h5>
+
+                    <p  th:text="${fiboValue}"></p>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
 
 </div>
 
