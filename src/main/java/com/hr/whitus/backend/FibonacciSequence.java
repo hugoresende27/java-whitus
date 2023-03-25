@@ -20,25 +20,7 @@ public class FibonacciSequence {
         return sequence;
     }
 
-    public static List<Integer> sequenceFromLimitToLimit(int start, int end) {
 
-
-        List<Integer> sequence = new ArrayList<>();
-        int a = 0;
-        int b = 1;
-        while (a <= 1000) {
-            if (a >= 0) {
-                if (a >= start && a <= end){
-                    sequence.add(a);
-                }
-
-            }
-            int c = a + b;
-            a = b;
-            b = c;
-        }
-        return sequence;
-    }
 
     public static BigInteger fibonnacci(int n) {
         BigInteger a = BigInteger.valueOf(0);
@@ -57,6 +39,38 @@ public class FibonacciSequence {
         }
 
         return (b);
+    }
+
+    /*
+      funtion to print the sequence between 0 and 1000
+   */
+    public static List<BigInteger> fiboSeqZeroTo() {
+        List<BigInteger> seq = new ArrayList<>();
+
+        //loop fibonacci sequence between 0 and 1000
+        for (int i = 0; i <= 1000; i++) {
+
+                seq.add(i,fibonnacci(i));
+            }
+
+
+
+        return seq;
+    }
+
+
+    public static List<BigInteger> printFiboIndexes(int start, int end) {
+
+        List<BigInteger> newSeq = new ArrayList<>();    //new list to return
+        List<BigInteger> fiboSeq = fiboSeqZeroTo();     //fibo list with seq from 0 to 1000
+
+        for (BigInteger value : fiboSeq){
+            if (fiboSeq.indexOf(value) >= start && fiboSeq.indexOf(value) <= end){//if index between values add
+                newSeq.add(value);
+            }
+        }
+
+        return newSeq;
     }
 }
 

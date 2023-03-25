@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class FiboController {
         long timePerformance = System.currentTimeMillis() - timeStart;//count time end
 
         if (validateForm(fiboForm)) {
-            List<Integer> sequence = FibonacciSequence.sequenceFromLimitToLimit(start, end);
+            List<BigInteger> sequence = FibonacciSequence.printFiboIndexes(start,end);
             recordHistory(start, end);
             mv.addObject("sequence", sequence);
         }
@@ -46,7 +47,7 @@ public class FiboController {
 
     }
 
-    @GetMapping("/between")
+    @GetMapping("/between-limits")
     public ModelAndView getFibonacciSequencesBetweenLimits(@ModelAttribute FormDataDTO fiboForm) throws IllegalAccessException
     {
 
