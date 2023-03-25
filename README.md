@@ -8,7 +8,7 @@
 
 ###  tutorial 
  - https://www.youtube.com/playlist?list=PLGRDMO4rOGcMbku5WcvZ3I8GMH__qd3I2 (basic thymeleaf)
- - https://www.youtube.com/watch?v=arEf4OXsUXI&t=395s (tasks)
+
 
 # Notes
  - resources/static for assets like css and js
@@ -46,3 +46,33 @@ public class Desafio {
     //programa com frontend e backend para devolver a seq de fibonnaci
 
 }
+
+
+---------------------------------------------------------------------------
+- API's Restful
+- Application Programming Interface
+- Representational State Transfer
+
+#### MVC - Model View Controller
+#### view - interface
+#### model - data manipulation
+#### controller
+
+#### packages created/layers :
+- models
+- controllers
+- services
+- repositories
+- config
+
+##### Notes
+- ?createDatabaseIfNotExist=true (to create DB)
+- spring.jpa.hibernate.ddl-auto=update
+1. update if not exist create
+2. none does notting
+3. create-drop create new every time
+- spring.jpa.show-sql=true (to show all sql)
+- spring-boot-starter-validation (to add validation annotations)
+
+### mvn clean install
+### mvn spring-boot:run
