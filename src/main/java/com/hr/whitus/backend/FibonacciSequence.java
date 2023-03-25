@@ -40,24 +40,7 @@ public class FibonacciSequence {
 
         return (b);
     }
-
-    /*
-      funtion to print the sequence between 0 and 1000
-   */
-    public static List<BigInteger> fiboSeqZeroTo() {
-        List<BigInteger> seq = new ArrayList<>();
-
-        //loop fibonacci sequence between 0 and 1000
-        for (int i = 0; i <= 1000; i++) {
-
-                seq.add(i,fibonnacci(i));
-            }
-
-
-
-        return seq;
-    }
-
+    
 
     public static List<BigInteger> printFiboIndexes(int start, int end) {
 
@@ -71,6 +54,25 @@ public class FibonacciSequence {
         }
 
         return newSeq;
+    }
+
+
+
+    /*
+      funtion to print the sequence between 0 and 1000
+   */
+    private static List<BigInteger> fiboSeqZeroTo() {
+        List<BigInteger> seq = new ArrayList<>();
+
+        //loop fibonacci sequence between 0 and 1000
+        for (int i = 0; i <= 1000; i++) {
+
+            seq.add(i,fibonnacci(i));
+        }
+
+
+
+        return seq;
     }
 }
 

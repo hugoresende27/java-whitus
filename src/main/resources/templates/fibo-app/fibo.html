@@ -7,7 +7,7 @@
 
 <div th:insert="~{fibo-app/fragments/topmenu :: topmenu}"></div>
 
-<div class="container">
+<div class="container-fluid p-3">
 
     <div class="row">
 
@@ -87,13 +87,13 @@
                     <button type="submit" class="btn btn-primary">Send</button>
                 </div>
 
-                <div class="card text-dark" style="width: 18rem;">
+                <div class="card text-dark" style="width: 25rem;">
 
                     <div class="card-body">
                         <h5 class="card-title">Fibonacci Sequence</h5>
-                        <ul>
-                            <li style="list-style-type:none" th:each="number : ${sequenceBetween}" th:text="${number}"></li>
-                        </ul>
+
+                        <p  th:each="number : ${sequenceBetween}" th:text="${number}"></p>
+
                     </div>
                 </div>
 
@@ -140,18 +140,17 @@
                     <button type="submit" class="btn btn-primary">Send</button>
                 </div>
 
-                <div class="card text-dark" style="width: 18rem;">
+                <div class="card text-dark" style="width: 25rem;">
 
 
-                    <div class="card text-dark" style="width: 18rem;">
+                    <div class="card-body">
 
-                        <div class="card-body">
-                            <h5 class="card-title">Fibonacci Sequence</h5>
-                            <ul>
-                                <li style="list-style-type:none" th:each="number : ${sequence}" th:text="${number}"></li>
-                            </ul>
-                        </div>
+                        <h5 class="card-title">Fibonacci Sequence</h5>
+
+                        <p th:each="number : ${sequence}" th:text="${number}"></p>
+
                     </div>
+
                 </div>
 
 

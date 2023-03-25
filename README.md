@@ -9,6 +9,8 @@
 ###  tutorial 
  - https://www.youtube.com/playlist?list=PLGRDMO4rOGcMbku5WcvZ3I8GMH__qd3I2 (basic thymeleaf)
 
+## to start project local dev server
+- mvn spring-boot:run
 
 # Notes
  - resources/static for assets like css and js
