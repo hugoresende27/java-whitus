@@ -17,10 +17,13 @@
  - thymeleaf iteration th:each (Iterable, Map, arrays)
  - to automatically create table spring.jpa.hibernate.ddl-auto=update
  - ModelAndView (to map html elements and java class - Spring lib)
- - @DateTimeFormat pass double bracket's
- - on view to use {{}}
+ - @DateTimeFormat pass double bracket's on view to use {{}}
  - @GetMapping("/mylink/{id}") (@PathVariable("id") use to get params from url
+ - @RestController indicates that the data returned by each method 
+will be written straight into the response body instead of rendering a template.
 
+## Unrelated Notes
+- RPC (Remote Procedure Call) vs REST API
 
 ------------------------------------------------------------------------
 public class Desafio 

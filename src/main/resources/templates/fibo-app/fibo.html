@@ -163,13 +163,38 @@
     </div>
 
     <div class="row">
-<!--        <form th:action="@{/fibo/value{val}(val=${val})}" th:method="get"  class="text-center p-3 m-3">-->
-        <form th:action="@{/fibo/value}" th:method="get"  class="text-center p-3 m-3">
+
+        <!--    HISTORY-->
+        <div class="col-md-4">
+
+            <h4>History Time single calcs</h4>
+
+            <table class="table table-stripped">
+                <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    <th scope="col">Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item: ${allHistorySingle}">
+                    <td th:text="${item.key}"></td>
+                    <td th:text="${item.value}"></td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <form th:action="@{/fibo/value}" th:method="get"  class="text-center p-3 m-3">
+
 
 
             <div class="input-group">
                 <label for="val" class="form-label">Index
-                    <input type="number" class="form-range" id="val" name="val">
+                    <input type="number" class="form-range" id="val" name="val" th:value="${val}">
                 </label>
 
 
@@ -192,6 +217,7 @@
             </div>
 
         </form>
+        </div>
     </div>
 
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fibo-app/fragments/header :: header}">
+
+</head>
+<body class="bg-dark text-white">
+
+<div th:insert="~{fibo-app/fragments/topmenu :: topmenu}"></div>
+
+<div class="container-fluid p-3">
+
+    <h3>To rapid use in a cli with curl</h3>
+    <p>curl -v localhost:8080/api/fibo/25</p>
+    <p>curl -v localhost:8080/api/fibo/limit/0/10</p>
+    <p>curl -v localhost:8080/api/fibo/index/0/10</p>
+
+    <p>curl -v localhost:8080/api/user</p>
+
+
+</div>
+
+<div th:insert="~{fibo-app/fragments/footer :: footer}">&copy</div>
+</body>
+</html>

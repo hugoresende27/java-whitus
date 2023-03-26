@@ -16,6 +16,8 @@ import java.util.Map;
 public class FiboController {
 
     static Map<Map<Integer,String>,Map<Integer,Integer>> allHistory = new HashMap<>();
+    static Map<Integer,Long> allHistorySingle = new HashMap<>();
+
     @GetMapping
     public ModelAndView index()
     {
@@ -81,17 +83,20 @@ public class FiboController {
 
         long timeStart = System.currentTimeMillis();//count time start
 
-
-        long timePerformance = System.currentTimeMillis() - timeStart;//count time end
-
         System.out.println(val);
 
         BigInteger res = FibonacciSequence.fibonnacci(val);
 
+        long timePerformance = System.currentTimeMillis() - timeStart;//count time end
+
+        allHistorySingle.put(val,timePerformance);
+
         mv.addObject("formData", new FormDataDTO(0,10));
         mv.addObject("time", timePerformance);
         mv.addObject("allHistory", allHistory);
+        mv.addObject("allHistorySingle", allHistorySingle);
         mv.addObject("fiboValue", res);
+        mv.addObject("val", val);
         return mv;
 
     }
